@@ -226,10 +226,10 @@ export default class Gallery extends PureComponent {
     }
 
     renderPage (pageData, pageId) {
-        const { onViewTransformed, onTransformGestureReleased, errorComponent, imageComponent } = this.props;
+        const { onViewTransformed, onTransformGestureReleased, errorComponent, imageComponent, imageProps } = this.props;
         return (
             <TransformableImage
-              ...this.props.imageProps
+              {...imageProps}
               onViewTransformed={((transform) => {
                   onViewTransformed && onViewTransformed(transform, pageId);
               })}
